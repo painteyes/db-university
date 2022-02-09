@@ -25,10 +25,12 @@ WHERE `departments`.`name` = 'Dipartimento di Neuroscienze'
 --------------------------------------------------------------------------------------------------
 
 SELECT *
-FROM `course_teacher`
+FROM `teachers`
+JOIN `course_teacher`
+ON `course_teacher`.`teacher_id` = `teachers`.`id` 
 JOIN `courses`
 ON `course_teacher`.`course_id` = `courses`.`id`
-WHERE `course_teacher`.`teacher_id` =  44
+WHERE `teacher`.`id` =  44
 
 
 --------------------------------------------------------------------------------------------------
